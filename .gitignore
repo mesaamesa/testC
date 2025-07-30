@@ -40,3 +40,6 @@
 # macOs
 .DS_Store
 
+# Doc editors
+.~lock.*
+
