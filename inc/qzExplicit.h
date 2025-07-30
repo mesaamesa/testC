@@ -1,14 +1,10 @@
-/************************************************************************/
-/*																		*/
-/*	Autor : Antonio Mesa  												*/
-/*																		*/
-/*	Prefijo mnemotécnico del módulo : QZ    							*/
-/*	Modelo de compilaci¢n :	WINDOWS										*/
-/* 	Ultima versi¢n : v 1.0										        */
-/*	Descripción : Calcula los vap's aplicando el método QZ explicito	*/
-/*				y los vep's mediante iteración inversa.					*/
-/*																		*/
-/************************************************************************/
+/**
+    Autor : Antonio Mesa
+    Prefijo mnemotecnico del modulo : QZ
+    Modelo de compilacion :    WINDOWS
+    Ultima version : v 1.0
+    Descripcion : Calcula los vap's aplicando el metodo QZ explicito y los vep's mediante iteracion inversa.
+**/
 
 #ifndef QZEXPLIC
 #define QZEXPLIC

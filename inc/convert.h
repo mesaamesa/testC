@@ -1,14 +1,10 @@
-/************************************************************************/
-/*																		*/
-/*	Autor : Antonio Mesa  												*/
-/*																		*/
-/*	Prefijo mnemotécnico del módulo : FC    							*/
-/*	Modelo de compilación :	WINDOWS										*/
-/* 	Ultima versi¢n : v 1.0										        */
-/*	Descripci¢n : Convierte una matriz cuadrada en una matrices de una  */
-/*				estructura determinada.									*/
-/*																		*/
-/************************************************************************/
+/**
+    Autor : Antonio Mesa
+    Prefijo mnemotecnico del modulo : FC
+    Modelo de compilacion :    WINDOWS
+    Ultima version : v 1.0
+    Descripcion : Convierte una matriz cuadrada en una matrices de una estructura determinada.
+**/
 
 #ifndef FCMATRIZ
 #define FCMATRIZ

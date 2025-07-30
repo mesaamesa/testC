@@ -1,14 +1,10 @@
-/************************************************************************/
-/*																		*/
-/*	Autor : Antonio Mesa  												*/
-/*																		*/
-/*	Prefijo mnemotécnico del módulo : OP    							*/
-/*	Modelo de compilaci¢n :	WINDOWS										*/
-/* 	Ultima versión : v 1.0										        */
-/*	Descripción : Realiza las operaciones entre matrices, vectores y    */
-/*				escalares.												*/
-/*																		*/
-/************************************************************************/
+/**
+    Autor : Antonio Mesa
+    Prefijo mnemotecnico del modulo : OP
+    Modelo de compilacion :    WINDOWS
+    Ultima version : v 1.0
+    Descripcion : Realiza las operaciones entre matrices, vectores y escalares.
+**/
 
 #ifndef OPMATRIZ
 #define OPMATRIZ

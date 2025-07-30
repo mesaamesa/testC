@@ -1,14 +1,10 @@
-/************************************************************************/
-/*																		*/
-/*	Autor : Antonio Mesa 												*/
-/*																		*/
-/*	Prefijo mnemotécnico del módulo : IO 								*/
-/*	Modelo de compilación : WINDOWS										*/
-/* 	Ultima versión : v 1.0										        */
-/*	Descripci¢n : Comunica las matrices y los resultados con pantalla,	*/
-/*				ficheros, etc.											*/
-/*																		*/
-/************************************************************************/
+/**
+    Autor : Antonio Mesa
+    Prefijo mnemotecnico del modulo : IO
+    Modelo de compilacion : WINDOWS
+    Ultima version : v 1.0
+    Descripcion : Comunica las matrices y los resultados con pantalla, ficheros, etc.
+**/
 
 #ifndef IOMATRIZ
 #define IOMATRIZ

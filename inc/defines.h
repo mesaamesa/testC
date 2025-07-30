@@ -1,14 +1,10 @@
-/************************************************************************/
-/*																		*/
-/*	Autor : Antonio Mesa  												*/
-/*																		*/
-/*	Prefijo mnemotécnico del módulo : 									*/
-/*	Modelo de compilaci¢n :	DOS											*/
-/* 	Ultima versión : v 1.0										        */
-/*	Descripci¢n : definici¢n de nuevos tipos de variables y de          */
-/* 		constantes globales												*/
-/*																		*/
-/************************************************************************/
+/**
+    Autor : Antonio Mesa
+    Prefijo mnemotecnico del modulo :
+    Modelo de compilacion :    DOS
+    Ultima version : v 1.0
+    Descripcion : definicion de nuevos tipos de variables y de constantes globales.
+ **/
 
 #ifndef NUEVO
 #define NUEVO
