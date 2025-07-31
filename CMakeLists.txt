@@ -5,3 +5,7 @@ add_executable(stateMachine)
 target_include_directories(stateMachine PRIVATE inc)
 target_sources(stateMachine PRIVATE src/stateMachine.cpp src/main.cpp)
 
+add_executable(bisection)
+target_include_directories(bisection PRIVATE inc)
+target_sources(bisection PRIVATE src/bisection.c src/drvBisection.c src/bisectionMain.c)
+
