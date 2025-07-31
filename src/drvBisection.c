@@ -7,6 +7,8 @@
 /*																		*/
 /************************************************************************/
 
+#include <stdio.h>
+
 #include "defines.h"
 #include "io.h"
 #include "convert.h"
@@ -38,6 +40,7 @@ void DRdriverbisec(string matA, string matB, escalar S)
 
 	BIbuscainterval(&k,&a,&b,A,R,S,Dim);
 	BIbisec(&lambda,a,b,k,A,R,Dim);
+	printf("\nlambda = %1.17g\n",lambda);
 
 	IOfreemat(A,Dim);
     IOfreemat(R,Dim);

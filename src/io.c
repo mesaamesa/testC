@@ -113,8 +113,8 @@ void IOrdmat(matriz *pA, string Nombre, unsigned int *pDim)
 			j++;
 			if(j >= Dim) {j = 0; i++;}
 		}
+		fclose(f);
 	}
-	fclose(f);
     *pA = A;
     *pDim = Dim;
 	if(i != Dim) ERfatal(ERRFICHRD);
