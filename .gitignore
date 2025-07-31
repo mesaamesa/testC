@@ -43,3 +43,5 @@
 # Doc editors
 .~lock.*
 
+# CMake
+build/
