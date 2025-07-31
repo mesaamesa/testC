@@ -6,9 +6,9 @@
 **/
 
 #include <math.h>
-#include "nuevo.h"
-#include "iomatriz.h"
-#include "fcmatriz.h"
+
+#include "defines.h"
+#include "io.h"
 
 escalar OPeps(div)
 escalar div;
@@ -64,7 +64,7 @@ indice inf,sup;
             C[i][j] = A[i][j] - B[i][j];
 }
 
-void OPprodmat(matriz C, matriz A, matriz B, unsigned int Dim)
+void OPprodmat(matriz C, matriz A, matriz B, unsigned int sel, unsigned int Dim)
 {
 	indice i,j,k;
 	escalar ss;
@@ -521,7 +521,7 @@ void OPsort(vector X, unsigned int Dim)
     }
 }
 
-void OPgivenspre(matriz A, indice i, indice j, escalar c, escalar s, unsigned int Dim)
+void OPgivenspre(matriz A, indice i, indice j, indice colini, escalar c, escalar s, escalar epsA, unsigned int Dim)
 {
 	indice k;
     escalar p,q;
@@ -535,7 +535,7 @@ void OPgivenspre(matriz A, indice i, indice j, escalar c, escalar s, unsigned in
 	}
 }
 
-void OPgivenspost(matriz A, indice i, indice j, escalar c, escalar s, unsigned int Dim)
+void OPgivenspost(matriz A, indice i, indice j, indice filini, escalar c, escalar s, escalar epsA, unsigned int Dim)
 {
 	indice k;
     escalar p,q;
@@ -549,7 +549,7 @@ void OPgivenspost(matriz A, indice i, indice j, escalar c, escalar s, unsigned i
 	}
 }
 
-void OPelempre1(matriz A, indice i, indice j, escalar x, unsigned int Dim)
+void OPelempre1(matriz A, indice i, indice j, indice colini, escalar x, escalar epsA, unsigned int Dim)
 {
 	indice k;
     escalar p,q;
@@ -562,7 +562,7 @@ void OPelempre1(matriz A, indice i, indice j, escalar x, unsigned int Dim)
     }
 }
 
-void OPelempre2(matriz A, indice i, indice j, escalar x, unsigned int Dim)
+void OPelempre2(matriz A, indice i, indice j, indice colini, escalar x, escalar epsA, unsigned int Dim)
 {
 	indice k;
     escalar p,q;
@@ -576,7 +576,7 @@ void OPelempre2(matriz A, indice i, indice j, escalar x, unsigned int Dim)
     }
 }
 
-void OPelempost1(matriz A, indice i, indice j, escalar x, unsigned int Dim)
+void OPelempost1(matriz A, indice i, indice j, indice filini, escalar x, escalar epsA, unsigned int Dim)
 {
 	indice k;
     escalar p,q;
@@ -589,7 +589,7 @@ void OPelempost1(matriz A, indice i, indice j, escalar x, unsigned int Dim)
     }
 }
 
-void OPelempost2(matriz A, indice i, indice j, escalar x, unsigned int Dim)
+void OPelempost2(matriz A, indice i, indice j, indice filini,  escalar x, escalar epsA, unsigned int Dim)
 {
 	indice k;
     escalar p,q;

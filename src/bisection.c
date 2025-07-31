@@ -2,20 +2,15 @@
 /*																		*/
 /*	Autor : Antonio Mesa												*/
 /*																		*/
-/*	Versi¢n : 															*/
+/*	Versiï¿½n : 															*/
 /*		   		v 1.0		1-XI-1994			10-II-1995				*/
 /*																		*/
 /************************************************************************/
 
-#include "nuevo.h"
-#include "errormat.h"
-#include "iomatriz.h"
-#include "opmatriz.h"
-#include "fcmatriz.h"
 #include <math.h>
-/*traza*/
-#include <stdio.h>
-#include <stdlib.h>
+
+#include "defines.h"
+#include "io.h"
 
 void BImirasturm(unsigned int *pS, vector P, unsigned int Dim)
 {
@@ -141,7 +136,6 @@ void BIbisec(escalar *plambda, escalar a0, escalar b0, unsigned int k, matriz A,
 	b = b0;
 	while((b - a) > EPS*c)
 	{
-/*traza*/printf("\nc = %1.18g",c);
 		c = (b + a) / 2;
 		BIsturm(P,A,B,c,Dim);
 		BImirasturm(&sk,P,Dim);

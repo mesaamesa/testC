@@ -6,13 +6,12 @@
 **/
 
 
-#include "nuevo.h"
-#include "errormat.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <alloc.h>
+#include <stdio.h>
 #include <string.h>
-#include <conio.h>
+
+#include "defines.h"
+#include "error.h"
 
 void IOmemmat(matriz *pA, unsigned int Dim)
 {
@@ -118,7 +117,7 @@ void IOrdmat(matriz *pA, string Nombre, unsigned int *pDim)
 	fclose(f);
     *pA = A;
     *pDim = Dim;
-	if(i != Dim) ERfatal(ERRFICH);
+	if(i != Dim) ERfatal(ERRFICHRD);
 }
 
 void IOwrmat(matriz A, string Nombre, unsigned int Dim)
@@ -130,7 +129,7 @@ void IOwrmat(matriz A, string Nombre, unsigned int Dim)
 	i = j = 0;
 	if((f = fopen(Nombre,"w")) != NULL)
 	{
-    	itoa(Dim,buffer,10);
+    	//TODO: itoa(Dim,buffer,10);
         fputs(buffer,f);
         putc(',',f);
         putc('\n',f);
@@ -149,7 +148,7 @@ void IOwrmat(matriz A, string Nombre, unsigned int Dim)
 		}
 	}
 	fclose(f);
-	if(i != Dim) ERfatal(ERRFICH);
+	if(i != Dim) ERfatal(ERRFICHWR);
 }
 
 void IOrdvect(vector *pV, string Nombre, unsigned int *pDim)
@@ -187,7 +186,7 @@ void IOrdvect(vector *pV, string Nombre, unsigned int *pDim)
 	fclose(f);
     *pV = V;
     *pDim = Dim;
-	if(i != Dim) ERfatal(ERRFICH);
+	if(i != Dim) ERfatal(ERRFICHRD);
 }
 
 void IOwrvect(vector V, string Nombre, unsigned int Dim)
@@ -208,7 +207,7 @@ void IOwrvect(vector V, string Nombre, unsigned int Dim)
 		}
 	}
 	fclose(f);
-	if(i != Dim) ERfatal(ERRFICH);
+	if(i != Dim) ERfatal(ERRFICHWR);
 }
 
 void IOwrvectCo(Vr,Vi,Nombre,Dim)
@@ -257,7 +256,7 @@ void IOwrvect2(vector V, string Nombre, unsigned int Dim)
 	i = 0;
 	if((f = fopen(Nombre,"w")) != NULL)
 	{
-    	itoa(Dim,buffer,10);
+    	//TODO: itoa(Dim,buffer,10);
         fputs(buffer,f);
         putc(',',f);
         putc('\n',f);
@@ -271,7 +270,7 @@ void IOwrvect2(vector V, string Nombre, unsigned int Dim)
 		}
 	}
 	fclose(f);
-	if(i != Dim) ERfatal(ERRFICH);
+	if(i != Dim) ERfatal(ERRFICHWR);
 }
 
 void IOputmat(matriz A, string Nombre, char Formato, unsigned int Dim)
@@ -307,7 +306,7 @@ void IOwrpar(matriz X, vector L, string VEP, string VAP, unsigned int Dim)
 	{
 		strcpy(fichVAP,VAP);
         strcpy(fichVEP,VEP);
-		itoa(i,buffer,10);
+		//TODO: itoa(i,buffer,10);
 		strcat(fichVAP,buffer);
         strcat(fichVEP,buffer);
 		if(((fvap = fopen(fichVAP,"w")) != NULL)
@@ -326,6 +325,6 @@ void IOwrpar(matriz X, vector L, string VEP, string VAP, unsigned int Dim)
 		}
 		fclose(fvap);
         fclose(fvep);
-		if(j != Dim) ERfatal(ERRFICH);
+		if(j != Dim) ERfatal(ERRFICHWR);
 	}
 }

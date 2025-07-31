@@ -1,7 +1,6 @@
-#include "nuevo.h"
-#include "drvbisec.h"
 #include <stdlib.h>
-#include <math.h>
+
+#include "drvBisection.h"
 
 int main(int argcnt, char **argval)
 {

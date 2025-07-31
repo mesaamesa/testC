@@ -7,5 +7,16 @@ target_sources(stateMachine PRIVATE src/stateMachine.cpp src/main.cpp)
 
 add_executable(bisection)
 target_include_directories(bisection PRIVATE inc)
-target_sources(bisection PRIVATE src/bisection.c src/drvBisection.c src/bisectionMain.c)
+target_sources(
+    bisection 
+    PRIVATE 
+    src/bisection.c 
+    src/drvBisection.c 
+    src/bisectionMain.c
+    src/io.c
+    src/error.c
+    src/operator.c
+    src/convert.c
+)
+target_link_libraries(bisection m)
 

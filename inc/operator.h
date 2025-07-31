@@ -149,7 +149,7 @@ void OPsort(vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPgivenspre(matriz, indice, indice, escalar, escalar, unsigned int);
+void OPgivenspre(matriz, indice, indice, indice, escalar, escalar, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 

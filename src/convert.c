@@ -5,12 +5,11 @@
         10-II-1995
 **/
 
-#include "nuevo.h"
-#include "iomatriz.h"
-#include "opmatriz.h"
 #include <math.h>
-/*traza*/
-#include <stdio.h>
+
+#include "defines.h"
+#include "io.h"
+#include "operator.h"
 
 void FCldu(matriz L, matriz U, vector D, matriz A, unsigned int Dim)
 {
@@ -285,9 +284,9 @@ void FChesstriorto(matriz A, matriz B, matriz Q, matriz Z, unsigned int Dim)
 				h = sqrt(A[i-1][j] * A[i-1][j] + A[i][j] * A[i][j]);
 				c = A[i-1][j] / h;
 				s = A[i][j] / h;
-                OPgivenspre(A,i-1,i,c,s,Dim);
-                OPgivenspre(B,i-1,i,c,s,Dim);
-                OPgivenspre(Q,i-1,i,c,s,Dim);
+                OPgivenspre(A,i-1,i,j,c,s,epsA,Dim);
+                OPgivenspre(B,i-1,i,j,c,s,epsB,Dim);
+                OPgivenspre(Q,i-1,i,j,c,s,epsA,Dim);
 			}
 			if(fabs(B[i][i-1]) >= epsB)
 			{
@@ -316,8 +315,8 @@ void FChesstriorto2(matriz A, matriz B, unsigned int Dim)
 				h = sqrt(A[i-1][j] * A[i-1][j] + A[i][j] * A[i][j]);
 				c = A[i-1][j] / h;
 				s = A[i][j] / h;
-                OPgivenspre(A,i-1,i,c,s,Dim);
-                OPgivenspre(B,i-1,i,c,s,Dim);
+                OPgivenspre(A,i-1,i,j,c,s,epsA,Dim);
+                OPgivenspre(B,i-1,i,j,c,s,epsB,Dim);
 			}
 			if(fabs(B[i][i-1]) >= epsB)
 			{
