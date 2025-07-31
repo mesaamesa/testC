@@ -9,19 +9,19 @@
 #ifndef IOMATRIZ
 #define IOMATRIZ
 
-void IOrdmat();
+void IOrdmat(matriz *, string, unsigned int *);
 /* Pre : */
 /* Post : */
 
-void IOwrmat();
+void IOwrmat(matriz, string, unsigned int);
 /* Pre : */
 /* Post : */
 
-void IOputmat();
+void IOputmat(matriz, string, char, unsigned int);
 /* Pre : */
 /* Post : */
 
-void IOmemmat();
+void IOmemmat(matriz *, unsigned int);
 /* Pre : */
 /* Post : */
 
@@ -29,7 +29,7 @@ void IOmemmatmxn();
 /* Pre : */
 /* Post : */
 
-void IOfreemat();
+void IOfreemat(matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
@@ -37,7 +37,7 @@ void IOfreematmxn();
 /* Pre : */
 /* Post : */
 
-void IOrdvect();
+void IOrdvect(vector *, string, unsigned int *);
 /* Pre : */
 /* Post : */
 
@@ -49,23 +49,27 @@ void IOwrvectCo();
 /* Pre : */
 /* Post : */
 
-void IOwrvect();
+void IOwrvect(vector, string, unsigned int);
 /* Pre : */
 /* Post : */
 
-void IOputvect();
+void IOwrvect2(vector, string, unsigned int);
 /* Pre : */
 /* Post : */
 
-void IOmemvect();
+void IOputvect(vector, string, char, unsigned int);
 /* Pre : */
 /* Post : */
 
-void IOfreevect();
+void IOmemvect(vector *, unsigned int);
 /* Pre : */
 /* Post : */
 
-void IOwrpar();
+void IOfreevect(vector, unsigned int);
+/* Pre : */
+/* Post : */
+
+void IOwrpar(matriz, vector, string, string, unsigned int);
 /* Pre : */
 /* Post : */
 

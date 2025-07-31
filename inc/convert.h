@@ -9,11 +9,11 @@
 #ifndef FCMATRIZ
 #define FCMATRIZ
 
-void FCldu();
+void FCldu(matriz, matriz, vector, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void FClu();
+void FClu(matriz, matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
@@ -21,11 +21,11 @@ void FCchol();
 /* Pre : */
 /* Post : */
 
-void FCqrgram();
+void FCqrgram(matriz, matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void FCqrhouse();
+void FCqrhouse(matriz, matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
@@ -33,23 +33,23 @@ void FCqrgivens();
 /* Pre : */
 /* Post : */
 
-void FClrelem();
+void FClrelem(matriz, matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void FChesstriorto();
+void FChesstriorto(matriz, matriz, matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void FChesstriorto2();
+void FChesstriorto2(matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void FChesstrielem();
+void FChesstrielem(matriz, matriz, matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void FChesstrielem2();
+void FChesstrielem2(matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 

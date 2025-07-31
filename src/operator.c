@@ -24,15 +24,13 @@ escalar div;
     return e2;
 }
 
-void OPsumamat(C,A,B,Dim)
-matriz C,A,B;
-unsigned int Dim;
+void OPsumamat(matriz C, matriz A, matriz B, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
 
-    for(i = 0;i < Dim;i++)
-        for(j = 0;j < Dim;j++)
-            C[i][j] = A[i][j] + B[i][j];
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+			C[i][j] = A[i][j] + B[i][j];
 }
 
 void OPsumasubmat(C,A,B,inf,sup)
@@ -46,16 +44,13 @@ indice inf,sup;
             C[i][j] = A[i][j] + B[i][j];
 }
 
-
-void OPrestamat(C,A,B,Dim)
-matriz C,A,B;
-unsigned int Dim;
+void OPrestamat(matriz C, matriz A, matriz B, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
 
-    for(i = 0;i < Dim;i++)
-        for(j = 0;j < Dim;j++)
-            C[i][j] = A[i][j] - B[i][j];
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+			C[i][j] = A[i][j] - B[i][j];
 }
 
 void OPrestasubmat(C,A,B,inf,sup)
@@ -69,28 +64,27 @@ indice inf,sup;
             C[i][j] = A[i][j] - B[i][j];
 }
 
-void OPprodmat(C,A,B,sel,Dim)
-matriz C,A,B;
-unsigned int sel,Dim;
+void OPprodmat(matriz C, matriz A, matriz B, unsigned int Dim)
 {
-    indice i,j,k;
-    escalar ss;
+	indice i,j,k;
+	escalar ss;
+	matriz T;
 
     switch(sel)
     {
     case PROD :
-        for(i = 0;i < Dim;i++)
-            for(j = 0;j < Dim;j++)
-            {
-                ss = 0.0;
-                for(k = 0;k < Dim;k++)
-                    ss += A[i][k] * B[k][j];
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+		{
+			ss = 0.0;
+			for(k = 0;k < Dim;k++)
+				ss += A[i][k] * B[k][j];
                 C[i][j] = ss;
-            }
+		}
         break;
     case PRETRANS :
-        for(i = 0;i < Dim;i++)
-            for(j = 0;j < Dim;j++)
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
             {
                 ss = 0.0;
                 for(k = 0;k < Dim;k++)
@@ -175,85 +169,70 @@ indice inf,sup;
         }
 }
 
-void OPcpymat(A,B,Dim)
-matriz A,B;
-unsigned int Dim;
+void OPcpymat(matriz A, matriz B, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
 
     for(i = 0;i < Dim;i++)
-        for(j = 0;j < Dim;j++)
-            A[i][j] = B[i][j];
+    	for(j = 0;j < Dim;j++)
+        	A[i][j] = B[i][j];
 }
 
-void OPsumavect(W,U,V,Dim)
-vector W,U,V;
-unsigned int Dim;
+void OPsumavect(vector W, vector U, vector V, unsigned int Dim)
 {
-    indice i;
+	indice i;
 
-    for(i = 0;i < Dim;i++)
-        W[i] = U[i] + V[i];
+	for(i = 0;i < Dim;i++)
+		W[i] = U[i] + V[i];
 }
 
-void OPrestavect(W,U,V,Dim)
-vector W,U,V;
-unsigned int Dim;
+void OPrestavect(vector W, vector U, vector V, unsigned int Dim)
 {
-    indice i;
+	indice i;
 
-    for(i = 0;i < Dim;i++)
-        W[i] = U[i] - V[i];
+	for(i = 0;i < Dim;i++)
+		W[i] = U[i] - V[i];
 }
 
-escalar OPprodint(U,V,Dim)
-vector U,V;
-unsigned int Dim;
+escalar OPprodint(vector U, vector V, unsigned int Dim)
 {
-    indice i;
-    escalar pp;
+	indice i;
+	escalar pp;
 
-    pp = 0.0;
-    for(i = 0;i < Dim;i++)
-            pp += U[i] * V[i];
-    return pp;
+	pp = 0.0;
+	for(i = 0;i < Dim;i++)
+			pp += U[i] * V[i];
+	return pp;
 }
 
-escalar OPprodintmat(X,A,Y,Dim)
-vector X;
-matriz A;
-vector Y;
-unsigned int Dim;
+escalar OPprodintmat(vector X, matriz A, vector Y, unsigned int Dim)
 {
-    indice i,j;
-    escalar r;
-    vector T;
+	indice i,j;
+	escalar r;
+	vector T;
 
-     IOmemvect(&T,Dim);
-    for(i = 0;i < Dim;i++)
-    {
-        r = 0.0;
-        for(j = 0;j < Dim;j++)
-            r += A[i][j] * Y[j];
-        T[i] = r;
-    }
-    r = 0.0;
-    for(i = 0;i < Dim;i++)
-        r += X[i] * T[i];
-    IOfreevect(T,Dim);
-    return r;
+	IOmemvect(&T,Dim);
+	for(i = 0;i < Dim;i++)
+	{
+		r = 0.0;
+		for(j = 0;j < Dim;j++)
+			r += A[i][j] * Y[j];
+		T[i] = r;
+	}
+	r = 0.0;
+	for(i = 0;i < Dim;i++)
+		r += X[i] * T[i];
+	IOfreevect(T,Dim);
+	return r;
 }
 
-void OPctemat(C,A,K,Dim)
-matriz C,A;
-escalar K;
-unsigned int Dim;
+void OPctemat(matriz C, matriz A, escalar K, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
 
-    for(i = 0;i < Dim;i++)
-        for(j = 0;j < Dim;j++)
-            C[i][j] = K * A[i][j];
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+			C[i][j] = K * A[i][j];
 }
 
 void OPctesubmat(C,A,K,inf,sup)
@@ -268,460 +247,403 @@ indice inf,sup;
             C[i][j] = K * A[i][j];
 }
 
-void OPctevect(V,U,K,Dim)
-vector V,U;
-escalar K;
-unsigned int Dim;
+void OPctevect(vector V, vector U, escalar K, unsigned int Dim)
 {
-    indice i;
+	indice i;
+
+	for(i = 0;i < Dim;i++)
+		V[i] = K * U[i];
+}
+
+void OPcpyvect(vector V, vector U, unsigned int Dim)
+{
+	indice i;
 
     for(i = 0;i < Dim;i++)
-        V[i] = K * U[i];
+    	V[i] = U[i];
 }
 
-void OPcpyvect(V,U,Dim)
-vector V,U;
-unsigned int Dim;
+void OPmatvect(vector V, matriz A, vector U, unsigned int Dim)
 {
-    indice i;
+	indice i,j;
+	escalar ss;
+	vector W;
 
-    for(i = 0;i < Dim;i++)
-        V[i] = U[i];
+	IOmemvect(&W,Dim);
+	for(i = 0;i < Dim;i++)
+	{
+		ss = 0.0;
+		for(j = 0;j < Dim;j++)
+			ss += A[i][j] * U[j];
+		W[i] = ss;
+	}
+	for(i = 0;i < Dim;i++)
+		V[i] = W[i];
+	IOfreevect(W,Dim);
 }
 
-void OPmatvect(V,A,U,Dim)
-vector V;
-matriz A;
-vector U;
-unsigned int Dim;
+void OPmatdiag(matriz C, matriz A, vector D, unsigned int Dim)
 {
-    indice i,j;
-    escalar ss;
+	indice i,j;
+	escalar dd;
+	matriz T;
 
-    for(i = 0;i < Dim;i++)
-    {
-        ss = 0.0;
-        for(j = 0;j < Dim;j++)
-            ss += A[i][j] * U[j];
-        V[i] = ss;
-    }
+	IOmemmat(&T,Dim);
+	for(j = 0;j < Dim;j++)
+	{
+		dd = D[j];
+		for(i = 0;i < Dim;i++)
+			T[i][j] = A[i][j] * dd;
+	}
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+			C[i][j] = T[i][j];
+	IOfreemat(T,Dim);
 }
 
-void OPmatdiag(C,A,D,Dim)
-matriz C,A;
-vector D;
-unsigned int Dim;
+void OPdiagmat(matriz C, matriz A, vector D, unsigned int Dim)
 {
-    indice i,j;
-    escalar dd;
+	indice i,j;
+	escalar dd;
+	matriz T;
 
-    for(j = 0;j < Dim;j++)
-    {
-        dd = D[j];
-        for(i = 0;i < Dim;i++)
-            C[i][j] = A[i][j] * dd;
-    }
+	IOmemmat(&T,Dim);
+	for(i = 0;i < Dim;i++)
+	{
+		dd = D[i];
+		for(j = 0;j < Dim;j++)
+			T[i][j] = dd * A[i][j];
+	}
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+			C[i][j] = T[i][j];
+	IOfreemat(T,Dim);
 }
 
-void OPdiagmat(C,A,D,Dim)
-matriz C,A;
-vector D;
-unsigned int Dim;
+void OPinvtsup(matriz Ui, matriz U, unsigned int Dim)
 {
-    indice i,j;
-    escalar dd;
+	indice i,j,k;
+	escalar vv;
 
-    for(i = 0;i < Dim;i++)
-    {
-        dd = D[i];
-        for(j = 0;j < Dim;j++)
-            C[i][j] = dd * A[i][j];
-    }
+	for(i = 0;i < Dim;i++)
+		Ui[i][i] = 1.0 / U[i][i];
+	for(i = 1;i < Dim;i++)
+		for(j = 0;j < (Dim-i);j++)
+		{
+			vv = U[j][i+j] * Ui[i+j][i+j];
+			for(k = 1;k < i;k++)
+				vv += U[j][i+j-k] * Ui[i+j-k][j+i];
+			Ui[j][i+j] = -vv / U[j][j];
+		}
+	for(i = 1;i < Dim;i++)
+		for(j = 0;j < i;j++)
+			Ui[i][j] = 0.0;
 }
 
-void OPinvtsup(Ui,U,Dim)
-matriz Ui,U;
-unsigned int Dim;
+void OPinvtinf(matriz Li, matriz L, unsigned int Dim)
 {
-    indice i,j,k;
-    escalar vv;
+	indice i,j,k;
+	escalar mm;
 
-    for(i = 0;i < Dim;i++)
-        Ui[i][i] = 1.0 / U[i][i];
-    for(i = 1;i < Dim;i++)
-        for(j = 0;j < (Dim-i);j++)
-        {
-            vv = U[j][i+j] * Ui[i+j][i+j];
-            for(k = 1;k < i;k++)
-                vv += U[j][i+j-k] * Ui[i+j-k][j+i];
-            Ui[j][i+j] = -vv / U[j][j];
-        }
-    for(i = 1;i < Dim;i++)
-        for(j = 0;j < i;j++)
-            Ui[i][j] = 0.0;
+	for(i = 0;i < Dim;i++)
+		Li[i][i] = 1.0 / L[i][i];
+	for(i = 1;i < Dim;i++)
+		for(j = 0;j < (Dim-i);j++)
+		{
+			mm = L[i+j][j] * Li[j][j];
+			for(k = 1;k < i;k++)
+				mm += L[i+j][i+j-k] * Li[i+j-k][j];
+			Li[i+j][j] = -mm / L[i+j][i+j];
+		}
+	for(i = 1;i < Dim;i++)
+		for(j = i+1;j < Dim;j++)
+			Li[i][j] = 0.0;
 }
 
-void OPinvtinf(Li,L,Dim)
-matriz Li,L;
-unsigned int Dim;
+void OPinvdiag(vector Di, vector D, unsigned int Dim)
 {
-    indice i,j,k;
-    escalar mm;
+	indice i;
 
-    for(i = 0;i < Dim;i++)
-        Li[i][i] = 1.0 / L[i][i];
-    for(i = 1;i < Dim;i++)
-        for(j = 0;j < (Dim-i);j++)
-        {
-            mm = L[i+j][j] * Li[j][j];
-            for(k = 1;k < i;k++)
-                mm += L[i+j][i+j-k] * Li[i+j-k][j];
-            Li[i+j][j] = -mm / L[i+j][i+j];
-        }
-    for(i = 1;i < Dim;i++)
-        for(j = i+1;j < Dim;j++)
-            Li[i][j] = 0.0;
+	for(i = 0;i < Dim;i++)
+		Di[i] = 1 / D[i];
 }
 
-void OPinvdiag(Di,D,Dim)
-vector Di,D;
-unsigned int Dim;
+escalar OPnorma2(vector V, unsigned int Dim)
 {
-    indice i;
+	indice i;
+	escalar x;
 
-    for(i = 0;i < Dim;i++)
-        Di[i] = 1 / D[i];
+	x = 0.0;
+	for(i = 0;i < Dim;i++)
+		x += V[i] * V[i];
+	return sqrt(x);
 }
 
-escalar OPnorma2(V,Dim)
-vector V;
-unsigned int Dim;
+escalar OPnormamax(vector V, unsigned int Dim)
 {
-    indice i;
-    escalar x;
-
-    x = 0.0;
-    for(i = 0;i < Dim;i++)
-        x += V[i] * V[i];
-    return sqrt(x);
-}
-
-escalar OPnormamax(V,Dim)
-vector V;
-unsigned int Dim;
-{
-    indice i;
+	indice i;
     escalar x;
 
     x = 0.0;
     for(i = 0; i < Dim;i++)
-        if(fabs(V[i]) > x) x = fabs(V[i]);
+    	if(fabs(V[i]) > x) x = fabs(V[i]);
 
     return x;
 }
 
-escalar OPnormamaxmat(A,Dim)
-matriz A;
-unsigned int Dim;
+escalar OPnormamaxmat(matriz A, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
     escalar x,y;
 
     x = 0.0;
     for(i = 0;i < Dim;i++)
     {
-        y = 0.0;
-        for(j = 0;j < Dim;j++)
+    	y = 0.0;
+    	for(j = 0;j < Dim;j++)
         {
-            y += fabs(A[i][j]);
+        	y += fabs(A[i][j]);
         }
         if(y > x) x = y;
     }
     return x;
 }
 
-void OPtransmat(At,A,Dim)
-matriz At,A;
-unsigned int Dim;
+void OPtransmat(matriz A, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
+	matriz T;
 
-    for(i = 0;i < Dim;i++)
-        for(j = 0;j < Dim;j++)
-            At[i][j] = A[j][i];
+	IOmemmat(&T,Dim);
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+			T[i][j] = A[j][i];
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+			A[i][j] = T[i][j];
+	IOfreemat(T,Dim);
 }
 
-void OPfiltramat(A,e,Dim)
-matriz A;
-escalar e;
-unsigned int Dim;
+void OPfiltramat(matriz A, escalar e, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
 
     for(i = 0;i < Dim;i++)
-        for(j = 0;j < Dim;j++)
-            if(fabs(A[i][j]) < e) A[i][j] = 0.0;
+    	for(j = 0;j < Dim;j++)
+        	if(fabs(A[i][j]) < e) A[i][j] = 0.0;
 }
 
-void OPsisteqsup(U,X,Y,Dim)
-matriz U;
-vector X,Y;
-unsigned int Dim;
+void OPsisteqsup(matriz U, vector X, vector Y, unsigned int Dim)
 {
-    indice i,j,k;
-    escalar u;
+	indice i,j,k;
+	escalar u;
 
-    for(i = 0;i < Dim;i++)
-    {
-        k = Dim - 1 - i;
-        u = 0.0;
-        for(j = (Dim-i);j < Dim;j++)
-            u += X[j] * U[k][j];
-        X[k] = (Y[k] - u) / U[k][k];
-    }
+	for(i = 0;i < Dim;i++)
+	{
+		k = Dim - 1 - i;
+		u = 0.0;
+		for(j = (Dim-i);j < Dim;j++)
+			u += X[j] * U[k][j];
+		X[k] = (Y[k] - u) / U[k][k];
+	}
 }
 
-void OPsisteqinf(L,X,Y,Dim)
-matriz L;
-vector X,Y;
-unsigned int Dim;
+void OPsisteqinf(matriz L, vector X, vector Y, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
     escalar l;
 
     for(i = 0;i < Dim;i++)
     {
         l = 0.0;
         for(j = 0;j < i;j++)
-            l += X[j] * L[i][j];
+        	l += X[j] * L[i][j];
         X[i] = (Y[i] - l) / L[i][i];
     }
 }
 
-void OPidentidad(I,Dim)
-matriz I;
-unsigned int Dim;
+void OPidentidad(matriz I, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
 
-    for(i = 0;i < Dim;i++)
-        for(j = 0;j < Dim;j++)
-        {
-            if(i == j) I[i][i] = 1.0;
-            else I[i][j] = 0.0;
-        }
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+		{
+			if(i == j) I[i][i] = 1.0;
+			else I[i][j] = 0.0;
+		}
 }
 
-void OPceromat(O,Dim)
-matriz O;
-unsigned int Dim;
+void OPceromat(matriz O, unsigned int Dim)
 {
-    indice i,j;
-    for(i = 0;i < Dim;i++)
-        for(j = 0;j < Dim;j++)
-            O[i][j] = 0.0;
+	indice i,j;
+	for(i = 0;i < Dim;i++)
+		for(j = 0;j < Dim;j++)
+			O[i][j] = 0.0;
 }
 
-void OPunovect(V,Dim)
-vector V;
-unsigned int Dim;
+void OPunovect(vector V, unsigned int Dim)
 {
-    indice i;
+	indice i;
 
     for(i = 0;i < Dim;i++)
-        V[i]  = 1.0;
+    	V[i]  = 1.0;
 }
 
-void OPcerovect(V,Dim)
-vector V;
-unsigned int Dim;
+void OPcerovect(vector V, unsigned int Dim)
 {
-    indice i;
+	indice i;
 
     for(i = 0;i < Dim;i++)
-        V[i]  = 0.0;
+    	V[i]  = 0.0;
 }
 
-void OPsort(X,Dim)
-vector X;
-unsigned int Dim;
+void OPsort(vector X, unsigned int Dim)
 {
-    indice i,j,jmin;
+	indice i,j,jmin;
     escalar xmin,t;
 
     for(i = 0;i < Dim;i++)
     {
-           xmin = X[i];
+       	xmin = X[i];
         jmin = i;
-        for(j = i;j < Dim;j++)
+    	for(j = i;j < Dim;j++)
         {
-            if(fabs(X[j]) < xmin)
+        	if(fabs(X[j]) < xmin)
             {
-                jmin = j;
-                xmin = fabs(X[j]);
+            	jmin = j;
+            	xmin = fabs(X[j]);
             }
         }
-        t = X[jmin];
-        X[jmin] = X[i];
-        X[i] = t;
+		t = X[jmin];
+		X[jmin] = X[i];
+		X[i] = t;
     }
 }
 
-void OPgivenspre(A,i,j,colini,c,s,epsA,Dim)
-matriz A;
-indice i,j,colini;
-escalar c,s,epsA;
-unsigned int Dim;
+void OPgivenspre(matriz A, indice i, indice j, escalar c, escalar s, unsigned int Dim)
 {
-    indice k;
+	indice k;
     escalar p,q;
 
     for(k = colini;k < Dim;k++)
-    {
-        p = A[i][k];
-        q = A[j][k];
+	{
+		p = A[i][k];
+		q = A[j][k];
         if(fabs(A[i][k] = p * c + q * s) <= epsA) A[i][k] = 0.0;
         if(fabs(A[j][k] = -p * s + q * c) <= epsA) A[j][k] = 0.0;
-    }
+	}
 }
 
-void OPgivenspost(A,i,j,filini,c,s,epsA,Dim)
-matriz A;
-indice i,j,filini;
-escalar c,s,epsA;
-unsigned int Dim;
+void OPgivenspost(matriz A, indice i, indice j, escalar c, escalar s, unsigned int Dim)
 {
-    indice k;
+	indice k;
     escalar p,q;
 
     for(k = filini;k < Dim;k++)
-    {
-        p = A[k][i];
-        q = A[k][j];
+	{
+		p = A[k][i];
+		q = A[k][j];
         if(fabs(A[k][i] = p * c - q * s) <= epsA) A[k][i] = 0.0;
         if(fabs(A[k][j] = p * s + q * c) <= epsA) A[k][j] = 0.0;
-    }
+	}
 }
 
-void OPelempre1(A,i,j,colini,x,epsA,Dim)
-matriz A;
-indice i,j,colini;
-escalar x,epsA;
-unsigned int Dim;
+void OPelempre1(matriz A, indice i, indice j, escalar x, unsigned int Dim)
 {
-    indice k;
+	indice k;
     escalar p,q;
 
     for(k = colini;k < Dim;k++)
     {
-        p = A[i][k];
+    	p = A[i][k];
         q = A[j][k];
         if(fabs(A[j][k] = x * p + q) <= epsA) A[j][k] = 0.0;
     }
 }
 
-void OPelempre2(A,i,j,colini,x,epsA,Dim)
-matriz A;
-indice i,j,colini;
-escalar x,epsA;
-unsigned int Dim;
+void OPelempre2(matriz A, indice i, indice j, escalar x, unsigned int Dim)
 {
-    indice k;
+	indice k;
     escalar p,q;
 
     for(k = colini;k < Dim;k++)
     {
-        p = A[i][k];
+    	p = A[i][k];
         q = A[j][k];
         A[i][k] = q;
         if(fabs(A[j][k] = x * q + p) <= epsA) A[j][k] = 0.0;
     }
 }
 
-void OPelempost1(A,i,j,filini,x,epsA,Dim)
-matriz A;
-indice i,j,filini;
-escalar x,epsA;
-unsigned int Dim;
+void OPelempost1(matriz A, indice i, indice j, escalar x, unsigned int Dim)
 {
-    indice k;
+	indice k;
     escalar p,q;
 
     for(k = filini;k < Dim;k++)
     {
-        p = A[k][i];
+    	p = A[k][i];
         q = A[k][j];
         if(fabs(A[k][i] = p + x * q) <= epsA) A[k][i] = 0.0;
     }
 }
 
-void OPelempost2(A,i,j,filini,x,epsA,Dim)
-matriz A;
-indice i,j,filini;
-escalar x,epsA;
-unsigned int Dim;
+void OPelempost2(matriz A, indice i, indice j, escalar x, unsigned int Dim)
 {
-    indice k;
+	indice k;
     escalar p,q;
 
     for(k = filini;k < Dim;k++)
     {
-        p = A[k][i];
+    	p = A[k][i];
         q = A[k][j];
         if(fabs(A[k][i] = q + x * p) <= epsA) A[k][i] = 0.0;
         A[k][j] = p;
     }
 }
 
-void OPcambiafil(A,i,j,Dim)
-matriz A;
-indice i,j;
-unsigned int Dim;
+void OPcambiafil(matriz A, indice i, indice j, unsigned int Dim)
 {
-    indice k;
+	indice k;
     escalar t;
 
     for(k = 0;k < Dim;k++)
     {
-        t = A[i][k];
+    	t = A[i][k];
         A[i][k] = A[j][k];
         A[j][k] = t;
     }
 }
 
-void OPcambiacol(A,i,j,Dim)
-matriz A;
-indice i,j;
-unsigned int Dim;
+void OPcambiacol(matriz A, indice i, indice j, unsigned int Dim)
 {
-    indice k;
+	indice k;
     escalar t;
 
     for(k = 0;k < Dim;k++)
     {
-        t = A[k][i];
+    	t = A[k][i];
         A[k][i] = A[k][j];
         A[k][j] = t;
     }
 }
 
-void OPsubdiaghess(A,B,Dim)
-matriz A,B;
-unsigned int Dim;
+void OPsubdiaghess(matriz A, matriz B, unsigned int Dim)
 {
-    indice i,j;
+	indice i,j;
     escalar x,y;
 
-    y = OPnormamaxmat(A,Dim) / Dim;
-    for(i = 1;i < Dim;i++)
-    {
+	for(i = 1;i < Dim;i++)
+	{
         x = y / A[i][i-1];
         A[i][i-1] = y;
-        for(j = i;j < Dim;j++)
-        {
-            A[i][j] = x * A[i][j];
-            B[i][j] = x * B[i][j];
-        }
-    }
+		for(j = i;j < Dim;j++)
+		{
+			A[i][j] = x * A[i][j];
+			B[i][j] = x * B[i][j];
+		}
+	}
 }
-            
+        	
+        	

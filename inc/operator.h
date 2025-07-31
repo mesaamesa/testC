@@ -13,7 +13,7 @@ escalar OPeps();
 /* Pre : */
 /* Post : */
 
-void OPsumamat();
+void OPsumamat(matriz, matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
@@ -21,7 +21,7 @@ void OPsumasubmat();
 /* Pre : */
 /* Post : */
 
-void OPrestamat(   );
+void OPrestamat(matriz, matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
@@ -29,7 +29,7 @@ void OPrestasubmat();
 /* Pre : */
 /* Post : */
 
-void OPprodmat(   );
+void OPprodmat(matriz, matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
@@ -41,35 +41,35 @@ void OPprodsubmat();
 /* Pre : */
 /* Post : */
 
-void OPcpymat(  );
+void OPcpymat(matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPsumavect(   );
+void OPsumavect(vector, vector, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPrestavect(   );
+void OPrestavect(vector, vector, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-escalar OPprodint(  );
+escalar OPprodint(vector, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-escalar OPprodintmat(   );
+escalar OPprodintmat(vector, matriz, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-escalar OPnormamaxmat( );
+escalar OPnormamaxmat(matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPctemat(   );
+void OPctemat(matriz, matriz, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPctesubmat();
+void OPctevect(vector, vector, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 
@@ -77,111 +77,111 @@ void OPctevect(   );
 /* Pre : */
 /* Post : */
 
-void OPcpyvect(  );
+void OPcpyvect(vector, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPmatdiag(   );
+void OPmatdiag(matriz, matriz, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPdiagmat(   );
+void OPdiagmat(matriz, matriz, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPmatvect(   );
+void OPmatvect(vector, matriz, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPinvtsup(  );
+void OPinvtsup(matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPinvtinf(  );
+void OPinvtinf(matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPinvdiag(  );
+void OPinvdiag(vector, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-escalar OPnorma2( );
+double OPnorma2(vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-escalar OPnormamax( );
+double OPnormamax(vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPfiltramat(  );
+void OPfiltramat(matriz, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPtransmat(  );
+void OPtransmat(matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPsisteqsup(   );
+void OPsisteqsup(matriz, vector, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPsisteqinf(   );
+void OPsisteqinf(matriz, vector, vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPidentidad( );
+void OPidentidad(matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPceromat( );
+void OPceromat(matriz, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPunovect( );
+void OPunovect(vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPcerovect( );
+void OPcerovect(vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPsort( );
+void OPsort(vector, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPgivenspre(       );
+void OPgivenspre(matriz, indice, indice, escalar, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPgivenspost(       );
+void OPgivenspost(matriz, indice, indice, escalar, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPelempre1(      );
+void OPelempre1(matriz, indice, indice, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPelempre2(      );
+void OPelempre2(matriz, indice, indice, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPelempost1(      );
+void OPelempost1(matriz, indice, indice, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPelempost2(      );
+void OPelempost2(matriz, indice, indice, escalar, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPcambiafil(   );
+void OPcambiafil(matriz, indice, indice, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPcambiacol(   );
+void OPcambiacol(matriz, indice, indice, unsigned int);
 /* Pre : */
 /* Post : */
 
-void OPsubdiaghess(  );
+void OPsubdiaghess(matriz, matriz, unsigned int);
 /* Pre : */
 /* Post : */
 

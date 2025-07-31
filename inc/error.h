@@ -9,7 +9,7 @@
 #ifndef ERRORMAT
 #define ERRORMAT
 
-void ERfatal();
+void ERfatal(unsigned int);
 /*Pre : */
 /*Post : */
 
