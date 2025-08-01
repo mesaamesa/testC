@@ -18,5 +18,15 @@ target_sources(
     src/operator.c
     src/convert.c
 )
-target_link_libraries(bisection m)
+if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  # using Clang
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  # using GCC
+  target_link_libraries(bisection m)
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+  # using Intel C++
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+  # using Visual Studio C++
+endif()
+message(">>>> Using Compiler: ${CMAKE_CXX_COMPILER_ID} <<<<")
 
