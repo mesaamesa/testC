@@ -36,3 +36,12 @@
 .cproject
 .project
 .settings/
+
+# macOs
+.DS_Store
+
+# Doc editors
+.~lock.*
+
+# CMake
+build/
