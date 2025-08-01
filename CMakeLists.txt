@@ -20,6 +20,7 @@ target_sources(
 )
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   # using Clang
+  target_link_libraries(bisection m)
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   # using GCC
   target_link_libraries(bisection m)
