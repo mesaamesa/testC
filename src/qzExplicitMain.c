@@ -1,7 +1,7 @@
-#include "nuevo.h"
-#include "drveig.h"
 #include <stdlib.h>
-#include <math.h>
+
+#include "defines.h"
+#include "drvEigen.h"
 
 int main(int argcnt, char **argval)
 {

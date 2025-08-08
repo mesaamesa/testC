@@ -13,10 +13,6 @@ void QZexplicito(matriz, matriz, unsigned int);
 /*Pre : */
 /*Post : */
 
-void QZexplic2();
-/*Pre : */
-/*Post : */
-
 void QZvepslu(matriz, matriz, matriz, vector, unsigned int);
 /*Pre : */
 /*Post : */

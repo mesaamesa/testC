@@ -2,17 +2,18 @@
 /*																		*/
 /*	Autor : Antonio Mesa  												*/
 /*																		*/
-/*	Prefijo mnemot‚cnico del m¢dulo : DR    							*/
-/*	Modelo de compilaci¢n :	WINDOWS										*/
-/* 	Ultima versi¢n : v 1.0										        */
-/*	Descripci¢n :														*/
+/*	Prefijo mnemotï¿½cnico del mï¿½dulo : DR    							*/
+/*	Modelo de compilaciï¿½n :	WINDOWS										*/
+/* 	Ultima versiï¿½n : v 1.0										        */
+/*	Descripciï¿½n : Se encarga de elegir las distintas opciones que 		*/
+/*				ofrece el paquete de rutinas.							*/
 /*																		*/
 /************************************************************************/
 
-#ifndef DRIVEREG
-#define DRIVEREG
+#ifndef DRVEIG
+#define DRVEIG
 
-void DRdriver(string, string);
+void DRdrivereig(string matA, string matB, bool flag, escalar S);
 /*Pre : */
 /*Post : */
 
