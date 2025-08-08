@@ -28,6 +28,32 @@
                 }
             ],
             "preLaunchTask": "CMake: build"
+        },
+        {
+            "name": "Debug qzExplicit",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/qzexplicit",
+            "args": ["../Samples/A18.MMM", "../Samples/B18.MMM", "1", "18"],
+            "stopAtEntry": false,
+            "cwd": ".",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "CMake: build"
         }
+
     ]
 }
